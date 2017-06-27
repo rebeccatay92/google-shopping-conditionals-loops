@@ -1,7 +1,7 @@
 var data = require('../products.json')
 
 // Write your solutions below
-
+// console.log(data.items)
 var items = data.items
 
 // Q1)

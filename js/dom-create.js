@@ -1,4 +1,3 @@
-
 function listItemCreator(neededText) {
   //create new li element and change innertext
   var newListItem = document.createElement('li')

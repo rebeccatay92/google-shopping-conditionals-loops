@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ALL YOUR INTERNAL FUNCTIONS SHOULD START FROM HERE AND HERE ONLY TOO
 
     var items = data.items
+
     var shoppingList = document.querySelector('.shoppingList')
     var cartList = document.querySelector('.cartList')
     // Starter code. List out items' name into the shopping list
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
         cartList.appendChild(lastItem)
       }
     })
+
     // DO NOT REMOVE ANYTHING AFTER THIS LINE
   })
 })
