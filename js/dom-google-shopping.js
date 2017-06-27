@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     brandButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
       var brandStr = document.querySelector('.brandInput').value
-      //need to replace items with  fn getItemsByBrand()
       var filteredObjects = getItemsByBrand(items, brandStr)
       filteredObjects.forEach(listGenerator)
     })
@@ -64,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var authorButton = document.querySelector('.authorButton')
     authorButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
-      var authorStr = document.querySelector('.authorInput').value.toLowerCase()
+      var authorStr = document.querySelector('.authorInput').value
       var filteredObjects = getItemsByAuthor(items, authorStr)
       filteredObjects.forEach(listGenerator)
     })
