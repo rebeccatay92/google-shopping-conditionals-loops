@@ -25,11 +25,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // function getItemsByBrand (items, brand) {
-    //   var brandItems = []
-    //   for (var i = 0; i < items.length; i++) {
-    //     if (items[i].product.brand === brand) {
-    //       brandItems.push(items[i])
-    //     }
+    //   var brandItems = items.filter(function(indiv) {
+    //     return indiv.product.brand === brand
     //   }
     //   return brandItems
     // }
