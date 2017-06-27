@@ -1,5 +1,3 @@
-var p = document.querySelector('p')
-
 
 function listItemCreator(neededText) {
   //create new li element and change innertext
@@ -11,7 +9,7 @@ function listItemCreator(neededText) {
 }
 
 // targeting button
-var button = document.querySelector('button')
+var button = document.querySelector('.addLast')
 button.addEventListener('click', function() {
   var shoppingList = document.querySelectorAll('.shoppingList li')
   var cartList = document.querySelector('.cartList')

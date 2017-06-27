@@ -2,22 +2,30 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link href="/style.css" rel="stylesheet">
     <title>GOOGLE SHOPPING</title>
   </head>
   <body>
     <h1>Shopping List</h1>
+    <div class="search">
+      <input class="brandInput" type="text"></input>
+      <button class="brandButton">Filter by brand</button>
+      <input class="authorInput" type="text"></input>
+      <button class="authorButton">Filter by author</button>
+      <button class="resetButton">Reset filters</button>
+    </div>
+
     <ul class="shoppingList">
-      <li>Nikon Camera G2000</li>
-      <li>CANON D30</li>
-      <li>Leica X70</li>
+      <!--titles here-->
     </ul>
 
-    <button>Add To Cart</button>
+    <button class="addLast">Add last item to cart</button>
 
-    <h2>My Cart</h2>
+    <h1>My Cart</h1>
     <ul class='cartList'>
-      <!--<li>add leica, then canon, then nikon</li>-->
+      <!--<li></li>-->
     </ul>
-    <script src="js/dom-create.js" charset="utf-8"></script>
+    <button class="clearCart">Clear the cart</button>
+    <script src="js/dom-google-shopping.js" charset="utf-8"></script>
   </body>
 </html>
