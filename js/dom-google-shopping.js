@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
       shoppingList.appendChild(listItem)
     })
 
-    // function getItemsByBrand (items, brand) {
+    // function getItemsByBrand (items, str) {
     //   var brandItems = items.filter(function(indiv) {
-    //     return indiv.product.brand === brand
+    //     return indiv.product.brand.toLowerCase() === str.toLowerCase()
     //   }
     //   return brandItems
     // }
@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     brandButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
       var brandStr = document.querySelector('.brandInput').value.toLowerCase()
+      //need to replace items with filteredset using fn getItemsByBrand()
       items.forEach(function (item) {
         var brand = item.product.brand.toLowerCase()
         if (brand.indexOf(brandStr) > -1 ) {
