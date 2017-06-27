@@ -16,7 +16,14 @@ function getItemsByBrand (items, brand) {
   }
   return brandItems
 }
-getItemsByBrand(items, 'Nikon')
+console.log(getItemsByBrand(items, 'Lytro'))
+
+//if using array.filter()
+// function isEqualToBrandName(item, brandname) {
+//   return item.product.brand === brandname
+// }
+// var newFilteredArray = items.filter(isEqualToBrandName)
+
 
 // Q3)
 function getItemsByAuthor (items, author) {
@@ -28,7 +35,7 @@ function getItemsByAuthor (items, author) {
   }
   return authorArr
 }
-// console.log(getItemsByAuthor(getItems(data), 'Target'))
+getItemsByAuthor(items, 'Target')
 
 // qns 4 getAvailableProducts(items)
 // Create function called getAvailableProducts that takes an item array
