@@ -1,38 +1,28 @@
-var data = require('../products.json');
+var data = require('../products.json')
+var items = data.items
 
-// question 1
-// var counter = 0;
-// for (var i = 0; i < 25; i ++) {
-//   var item = data.items[i]
-//   var kind = item.kind
-//   if (kind === 'shopping#product') {
-//     counter ++;
-//   }
+// Q1)
+// var itemCount = 0
+// for (var i = 0; i < items.length; i++) {
+//   var eachItem = items[i]
+//   itemCount += 1
+//   console.log(eachItem.kind)
 // }
-//   console.log(counter)
-// count is 25. also found in currentItemsCount in json
 
-// question 2
-// for (var i = 0; i < 25; i ++) {
-//   var item = data.items[i]
-//   var product = item.product
-//   var inventory = product.inventories[0]
-//   var availability = inventory.availability
-//   var title = item.product.title
-//   if (availability === 'backorder') {
-//       console.log(title)
+// Q2)
+// for (var j = 0; j < items.length; j++) {
+//   var eachItem = items[j]
+//   var inventories = eachItem.product.inventories[0]
+//   if (inventories.availability === 'backorder') {
+//     console.log(eachItem.product.brand)
 //   }
 // }
 
-//question 3
-// for (var i = 0; i < 25; i ++) {
-//   var item = data.items[i]
-//   var product = item.product
-//   var images = product.images
-//   //images is an array with each img being an obj
-//   var title = item.product.title
-//   if (images.length > 1) {
-//     console.log(title)
+// Q3
+// for (var i = 0; i < data.items.length; i++) {
+//   var itemsProduct = data.items[i].product
+//   if (itemsProduct.images.length > 1) {
+//     console.log(itemsProduct.title) // ---> Nikon D800 ... Canon EOS
 //   }
 // }
 
@@ -44,31 +34,4 @@ var data = require('../products.json');
 //   if (brand === 'Canon') {
 //     console.log(product)
 //   }
-// }
-
-//question 5
-// for (var i = 0; i < 25; i ++) {
-//   var item = data.items[i]
-//   var product = item.product
-//   var brand = product.brand
-//   var authorName = product.author.name
-//   if (brand === 'Canon' && authorName === 'eBay') {
-//     console.log(item)
-//   }
-// }
-
-
-//question 6. do we print the entire product?.
-//right now only printing brand, price, imagelink
-// for (var i = 0; i < 25; i ++) {
-//   var item = data.items[i]
-//   var product = item.product
-//   var inventory = product.inventories[0]
-//   var price = inventory.price
-//   var brand = product.brand
-//   var images = product.images //an array of objects
-//   var oneImageLink = images[0].link
-//   console.log(brand)
-//   console.log(price)
-//   console.log(oneImageLink)
 // }
