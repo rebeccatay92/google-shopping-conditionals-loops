@@ -16,7 +16,7 @@ function getItemsByBrand (items, brand) {
   return brandItems
 }
 
-//DO THIS!!!!
+// DO THIS!!!!
 
 // qns 4 getAvailableProducts(items)
 // Create function called getAvailableProducts that takes an item array

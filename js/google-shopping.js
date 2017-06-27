@@ -29,7 +29,7 @@ var items = data.items
 //   }
 // }
 
-// question 4
+// Q4
 // for (var i = 0; i < 25; i ++) {
 //   var item = data.items[i]
 //   var product = item.product
@@ -37,4 +37,19 @@ var items = data.items
 //   if (brand === 'Canon') {
 //     console.log(product)
 //   }
+// }
+
+// Q5
+// for (var i = 0; i < items.length; i++) {
+//   var products = items[i].product
+//   if (products.author.name === 'eBay' && products.brand === 'Canon') {
+//     console.log(products.author)
+// to print something else, just change this
+//   }
+// }
+
+// Q6
+// for (var i = 0; i < items.length; i++) {
+//   var products = items[i].product
+//   console.log('The brand is ' + products.brand + 'with a price of ' + products.inventories[0].price + ' dollars with an image link of ' + products.images[0].link)
 // }
