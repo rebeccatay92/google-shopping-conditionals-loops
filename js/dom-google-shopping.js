@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //   }
     //   return brandItems
     // }
-    
+
     var brandButton = document.querySelector('.brandButton')
     brandButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
@@ -85,10 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // targeting addlast button
     var addLast = document.querySelector('.addLast')
     addLast.addEventListener('click', function() {
-      var shoppingList = document.querySelectorAll('.shoppingList li')
-      var cartList = document.querySelector('.cartList')
-      if (shoppingList.length) {
-        var lastItem = shoppingList[shoppingList.length - 1]
+      var shoppingListLI = document.querySelectorAll('.shoppingList li')
+      if (shoppingListLI.length) {
+        var lastItem = shoppingListLI[shoppingListLI.length - 1]
         cartList.appendChild(lastItem)
       }
     })
