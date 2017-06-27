@@ -1,4 +1,7 @@
 var data = require('../products.json')
+
+// Write your solutions below
+
 var items = data.items
 
 // Q1)
@@ -26,7 +29,7 @@ var items = data.items
 //   }
 // }
 
-//question 4
+// question 4
 // for (var i = 0; i < 25; i ++) {
 //   var item = data.items[i]
 //   var product = item.product
