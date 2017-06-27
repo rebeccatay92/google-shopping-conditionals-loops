@@ -24,25 +24,27 @@ document.addEventListener('DOMContentLoaded', function () {
       shoppingList.appendChild(listItem)
     })
 
-    // function getItemsByBrand (items, str) {
-    //   var brandItems = items.filter(function(indiv) {
-    //     return indiv.product.brand.toLowerCase() === str.toLowerCase()
-    //   }
-    //   return brandItems
-    // }
+
+    function getItemsByBrand (items, str) {
+      var brandItems = []
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].product.brand.toLowerCase().indexOf(str.toLowerCase()) > -1) {
+          brandItems.push(items[i])
+        }
+      }
+      return brandItems
+    }
 
     var brandButton = document.querySelector('.brandButton')
     brandButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
-      var brandStr = document.querySelector('.brandInput').value.toLowerCase()
-      //need to replace items with filteredset using fn getItemsByBrand()
-      items.forEach(function (item) {
-        var brand = item.product.brand.toLowerCase()
-        if (brand.indexOf(brandStr) > -1 ) {
+      var brandStr = document.querySelector('.brandInput').value
+      //need to replace items with  fn getItemsByBrand()
+      var filteredObjects = getItemsByBrand(items, brandStr)
+      filteredObjects.forEach(function (indiv) {
           var listItem = document.createElement('li')
-          listItem.textContent = item.product.title
+          listItem.textContent = indiv.product.title
           shoppingList.appendChild(listItem)
-        }
       })
     })
 
