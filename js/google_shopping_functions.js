@@ -4,6 +4,7 @@ var data = require('../products.json')
 function getItems (data) {
   return data.items
 }
+var items = getItems(data)
 
 // 2.) getItemsByBrand(items, brand)
 function getItemsByBrand (items, brand) {
@@ -15,6 +16,7 @@ function getItemsByBrand (items, brand) {
   }
   return brandItems
 }
+getItemsByBrand(items, 'Nikon')
 
 // Q3)
 function getItemsByAuthor (items, author) {
@@ -57,7 +59,7 @@ D) All items made by Nikon with the author eBay.
 */
 
 // partA
-var sonyItems = getItemsByBrand(getItems(data), 'Sony')
+var sonyItems = getItemsByBrand(items, 'Sony')
 // console.log(sonyItems)
 
 // partB
@@ -68,7 +70,7 @@ var sonyAvailable = getAvailableProducts(sonyItems)
 // partC
 // first filter by author
 // next check if available
-var allAdorama = getItemsByAuthor(getItems(data), 'Adorama Camera')
+var allAdorama = getItemsByAuthor(items, 'Adorama Camera')
 // console.log(allAdorama)
 var availableAdorama = getAvailableProducts(allAdorama)
 // console.log(availableAdorama)
@@ -79,7 +81,7 @@ var availableAdorama = getAvailableProducts(allAdorama)
 // filter by ebay first as array will be smaller
 // then extract only nikon
 
-var allEbay = getItemsByAuthor(getItems(data), 'eBay')
+var allEbay = getItemsByAuthor(items, 'eBay')
 // console.log(allEbay)
 var nikonEbay = getItemsByBrand(allEbay, 'Nikon')
 // console.log(nikonEbay)
