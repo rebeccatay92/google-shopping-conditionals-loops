@@ -1,7 +1,4 @@
 var data = require('../products.json')
-
-// Write your solutions below
-
 var items = data.items
 
 // Q1)
@@ -26,5 +23,15 @@ var items = data.items
 //   var itemsProduct = data.items[i].product
 //   if (itemsProduct.images.length > 1) {
 //     console.log(itemsProduct.title) // ---> Nikon D800 ... Canon EOS
+//   }
+// }
+
+//question 4
+// for (var i = 0; i < 25; i ++) {
+//   var item = data.items[i]
+//   var product = item.product
+//   var brand = product.brand
+//   if (brand === 'Canon') {
+//     console.log(product)
 //   }
 // }
