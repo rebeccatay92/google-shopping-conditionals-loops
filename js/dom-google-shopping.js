@@ -18,11 +18,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // Starter code. List out items' name into the shopping list
     // HINT: EVERY FUNCTIONS HERE WILL BE ABLE TO ACCESS THE items VARIABLE
 
-    items.forEach(function (item) {
+    // items.forEach(function (item) {
+    //   var listItem = document.createElement('li')
+    //   listItem.textContent = item.product.title
+    //   shoppingList.appendChild(listItem)
+    // })
+    //refactored to:
+    items.forEach(listGenerator)
+    function listGenerator(item) {
       var listItem = document.createElement('li')
       listItem.textContent = item.product.title
       shoppingList.appendChild(listItem)
-    })
+    }
 
 
     function getItemsByBrand (items, str) {
@@ -41,11 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var brandStr = document.querySelector('.brandInput').value
       //need to replace items with  fn getItemsByBrand()
       var filteredObjects = getItemsByBrand(items, brandStr)
-      filteredObjects.forEach(function (indiv) {
-          var listItem = document.createElement('li')
-          listItem.textContent = indiv.product.title
-          shoppingList.appendChild(listItem)
-      })
+      filteredObjects.forEach(listGenerator)
     })
 
     var authorButton = document.querySelector('.authorButton')
