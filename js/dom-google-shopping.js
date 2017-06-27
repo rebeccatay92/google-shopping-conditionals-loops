@@ -24,13 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
     //   shoppingList.appendChild(listItem)
     // })
     //refactored to:
-    items.forEach(listGenerator)
     function listGenerator(item) {
       var listItem = document.createElement('li')
       listItem.textContent = item.product.title
       shoppingList.appendChild(listItem)
     }
-
+    items.forEach(listGenerator)
 
     function getItemsByBrand (items, str) {
       var brandItems = []
@@ -51,39 +50,36 @@ document.addEventListener('DOMContentLoaded', function () {
       filteredObjects.forEach(listGenerator)
     })
 
+
+    function getItemsByAuthor (items, str) {
+      var authorArr = []
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].product.author.name.toLowerCase().indexOf(str.toLowerCase()) > - 1) {
+          authorArr.push(items[i])
+        }
+      }
+      return authorArr
+    }
+
     var authorButton = document.querySelector('.authorButton')
     authorButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
       var authorStr = document.querySelector('.authorInput').value.toLowerCase()
-      items.forEach(function (item) {
-        var author = item.product.author.name.toLowerCase()
-        if (author.indexOf(authorStr) > -1) {
-          var listItem = document.createElement('li')
-          listItem.textContent = item.product.title
-          shoppingList.appendChild(listItem)
-        }
-      })
+      var filteredObjects = getItemsByAuthor(items, authorStr)
+      filteredObjects.forEach(listGenerator)
     })
 
     var resetButton = document.querySelector('.resetButton')
     resetButton.addEventListener('click', function() {
       shoppingList.innerHTML = ""
-      items.forEach(function (item) {
-        var listItem = document.createElement('li')
-        listItem.textContent = item.product.title
-        shoppingList.appendChild(listItem)
-      })
+      items.forEach(listGenerator)
     })
 
     var clearCart = document.querySelector('.clearCart')
     clearCart.addEventListener('click', function() {
       cartList.innerHTML = ""
       shoppingList.innerHTML = ""
-      items.forEach(function (item) {
-        var listItem = document.createElement('li')
-        listItem.textContent = item.product.title
-        shoppingList.appendChild(listItem)
-      })
+      items.forEach(listGenerator)
     })
 
     // targeting addlast button
