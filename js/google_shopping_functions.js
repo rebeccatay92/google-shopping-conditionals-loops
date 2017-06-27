@@ -16,7 +16,17 @@ function getItemsByBrand (items, brand) {
   return brandItems
 }
 
-// DO THIS!!!!
+// Q3)
+function getItemsByAuthor (items, author) {
+  var authorArr = []
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].product.author.name === author) {
+      authorArr.push(items[i])
+    }
+  }
+  return authorArr
+}
+// console.log(getItemsByAuthor(getItems(data), 'Target'))
 
 // qns 4 getAvailableProducts(items)
 // Create function called getAvailableProducts that takes an item array
@@ -36,7 +46,6 @@ var getAvailableProducts = function (items) {
   // console.log(arr)
   return arr
 }
-getAvailableProducts(items)
 
 // qns 5 Use the functions you created to ouput (console.log) the following
 // lists of items.
@@ -48,7 +57,7 @@ D) All items made by Nikon with the author eBay.
 */
 
 // partA
-var sonyItems = getItemsByBrand(items, 'Sony')
+var sonyItems = getItemsByBrand(getItems(data), 'Sony')
 // console.log(sonyItems)
 
 // partB
@@ -59,7 +68,7 @@ var sonyAvailable = getAvailableProducts(sonyItems)
 // partC
 // first filter by author
 // next check if available
-var allAdorama = getItemsByAuthor(items, 'Adorama Camera')
+var allAdorama = getItemsByAuthor(getItems(data), 'Adorama Camera')
 // console.log(allAdorama)
 var availableAdorama = getAvailableProducts(allAdorama)
 // console.log(availableAdorama)
@@ -70,7 +79,7 @@ var availableAdorama = getAvailableProducts(allAdorama)
 // filter by ebay first as array will be smaller
 // then extract only nikon
 
-var allEbay = getItemsByAuthor(items, 'eBay')
+var allEbay = getItemsByAuthor(getItems(data), 'eBay')
 // console.log(allEbay)
 var nikonEbay = getItemsByBrand(allEbay, 'Nikon')
 // console.log(nikonEbay)
