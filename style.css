@@ -1,4 +1,36 @@
-body {
-  width: 90%;
+html, body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 80%;
   margin: 0 auto;
+}
+
+.left-content, .right-content {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.left-content {
+  width: 65%;
+}
+
+.right-content {
+  width: 30%;
+}
+
+.shopping, .cart {
+  width: 50%;
+  display: inline-block;
+}
+
+.cart {
+  float: right;
+  vertical-align: top;
+  display: inline-block;
+}
+
+input, button {
+  display: block;
 }

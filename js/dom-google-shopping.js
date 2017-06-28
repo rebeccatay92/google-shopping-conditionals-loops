@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
     //   listItem.textContent = item.product.title
     //   shoppingList.appendChild(listItem)
     // })
-    //refactored to:
-    function listGenerator(item) {
+    // refactored to:
+    function listGenerator (item) {
       var listItem = document.createElement('li')
       listItem.textContent = item.product.title
       shoppingList.appendChild(listItem)
@@ -32,58 +32,53 @@ document.addEventListener('DOMContentLoaded', function () {
     items.forEach(listGenerator)
 
     function getItemsByBrand (items, str) {
-      var brandItems = []
-      for (var i = 0; i < items.length; i++) {
-        if (items[i].product.brand.toLowerCase().indexOf(str.toLowerCase()) > -1) {
-          brandItems.push(items[i])
-        }
-      }
+      var brandItems = items.filter(function (indiv) {
+        var brand = indiv.product.brand.toLowerCase()
+        return brand.indexOf(str.toLowerCase()) > -1
+      })
       return brandItems
     }
 
     var brandButton = document.querySelector('.brandButton')
-    brandButton.addEventListener('click', function() {
-      shoppingList.innerHTML = ""
+    brandButton.addEventListener('click', function () {
+      shoppingList.innerHTML = ''
       var brandStr = document.querySelector('.brandInput').value
       var filteredObjects = getItemsByBrand(items, brandStr)
       filteredObjects.forEach(listGenerator)
     })
 
-
     function getItemsByAuthor (items, str) {
-      var authorArr = []
-      for (var i = 0; i < items.length; i++) {
-        if (items[i].product.author.name.toLowerCase().indexOf(str.toLowerCase()) > - 1) {
-          authorArr.push(items[i])
-        }
-      }
+      var authorArr = items.filter(function (indiv) {
+        var author = indiv.product.author.name.toLowerCase()
+        return author.indexOf(str.toLowerCase()) > -1
+      })
       return authorArr
     }
 
     var authorButton = document.querySelector('.authorButton')
-    authorButton.addEventListener('click', function() {
-      shoppingList.innerHTML = ""
+    authorButton.addEventListener('click', function () {
+      shoppingList.innerHTML = ''
       var authorStr = document.querySelector('.authorInput').value
       var filteredObjects = getItemsByAuthor(items, authorStr)
       filteredObjects.forEach(listGenerator)
     })
 
     var resetButton = document.querySelector('.resetButton')
-    resetButton.addEventListener('click', function() {
-      shoppingList.innerHTML = ""
+    resetButton.addEventListener('click', function () {
+      shoppingList.innerHTML = ''
       items.forEach(listGenerator)
     })
 
     var clearCart = document.querySelector('.clearCart')
-    clearCart.addEventListener('click', function() {
-      cartList.innerHTML = ""
-      shoppingList.innerHTML = ""
+    clearCart.addEventListener('click', function () {
+      cartList.innerHTML = ''
+      shoppingList.innerHTML = ''
       items.forEach(listGenerator)
     })
 
     // targeting addlast button
     var addLast = document.querySelector('.addLast')
-    addLast.addEventListener('click', function() {
+    addLast.addEventListener('click', function () {
       var shoppingListLI = document.querySelectorAll('.shoppingList li')
       if (shoppingListLI.length) {
         var lastItem = shoppingListLI[shoppingListLI.length - 1]
