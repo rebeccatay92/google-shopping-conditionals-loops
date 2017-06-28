@@ -54,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
       filteredObjects.forEach(listGenerator)
     })
 
-    function getItemsByAuthor (items, str) {
+    function getItemsByAuthor (items) {
       var authorArr = items.filter(function (indiv) {
         var author = indiv.product.author.name.toLowerCase()
-        return author.indexOf(str.toLowerCase()) > -1
+              var authorStr = document.querySelector('.authorInput').value.toLowerCase()
+        return author.indexOf(authorStr) > -1
       })
       return authorArr
     }
@@ -65,8 +66,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var authorButton = document.querySelector('.authorButton')
     authorButton.addEventListener('click', function () {
       shoppingList.innerHTML = ''
-      var authorStr = document.querySelector('.authorInput').value
-      var filteredObjects = getItemsByAuthor(items, authorStr)
+      var filteredObjects = getItemsByAuthor(items)
+      filteredObjects.forEach(listGenerator)
+    })
+
+    var authorInput = document.querySelector('.authorInput')
+    authorInput.addEventListener('keyup', function () {
+      shoppingList.innerHTML = ''
+      var filteredObjects = getItemsByAuthor(items)
       filteredObjects.forEach(listGenerator)
     })
 
