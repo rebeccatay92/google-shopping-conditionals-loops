@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     items.forEach(listGenerator)
 
+    //function filterItems(keyword, callback)
+    //how do i filter by both brand and author?
+
     function getItemsByBrand (items) {
       var brandItems = items.filter(function (indiv) {
         var brand = indiv.product.brand.toLowerCase()
