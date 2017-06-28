@@ -31,10 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     items.forEach(listGenerator)
 
-    function getItemsByBrand (items, str) {
+    function getItemsByBrand (items) {
       var brandItems = items.filter(function (indiv) {
         var brand = indiv.product.brand.toLowerCase()
-        return brand.indexOf(str.toLowerCase()) > -1
+        var brandStr = document.querySelector('.brandInput').value.toLowerCase()
+        return brand.indexOf(brandStr) > -1
       })
       return brandItems
     }
@@ -42,8 +43,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var brandButton = document.querySelector('.brandButton')
     brandButton.addEventListener('click', function () {
       shoppingList.innerHTML = ''
-      var brandStr = document.querySelector('.brandInput').value
-      var filteredObjects = getItemsByBrand(items, brandStr)
+      var filteredObjects = getItemsByBrand(items)
+      filteredObjects.forEach(listGenerator)
+    })
+
+    var brandInput = document.querySelector('.brandInput')
+    brandInput.addEventListener('keyup', function() {
+      shoppingList.innerHTML = ''
+      var filteredObjects = getItemsByBrand(items)
       filteredObjects.forEach(listGenerator)
     })
 
